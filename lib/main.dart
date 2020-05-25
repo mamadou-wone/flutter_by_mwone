@@ -8,6 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(    
         primarySwatch: Colors.blue,
@@ -28,41 +29,76 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+ Color color = Colors.blue;
 
   @override
   Widget build(BuildContext context) {
+   
     return Scaffold(
       appBar: AppBar(
       
         title: Text(widget.title),
       ),
       body: Center(
-       
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+        child: GestureDetector(
+          child: Container(
+            height: 100,
+            width: 100,
+            color: color,
+          ),
+          onTap: () {
+            setState(() {
+              color = Colors.black;
+            });            
+          },
+          onDoubleTap: () {
+            setState(() {
+              color = Colors.yellow;
+            }); 
+          },
+          onLongPress: () {
+            setState(() {
+              color = Colors.blue;
+            });
+          },
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+        
+      ) 
     );
   }
 }
+
+// class MyApp extends StatelessWidget{
+  
+//   @override
+//   Widget build(BuildContext context) {
+//     Color color = Colors.red;
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text('MWONE'),
+//           leading: Text('data'),
+//         ),
+//         body: Center(
+//           child:  GestureDetector(
+//             child: Container(
+//               height: 100,
+//               width: 100,
+//               color: color,
+//             ),
+//             onTap: () {
+             
+//             },
+//             onDoubleTap: () {
+//               print("BOSS");
+//             },
+//           ) 
+//         )
+//       ),
+//     );
+//   }
+// }
+
+
+ 
