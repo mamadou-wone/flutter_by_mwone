@@ -32,12 +32,26 @@ class _MyHomePageState extends State<MyHomePage> {
  Color color = Colors.blue;
 
   @override
-  Widget build(BuildContext context) {
-   
+  Widget build(BuildContext context) { 
+    Color colorIcon = Colors.white;
     return Scaffold(
       appBar: AppBar(
-      
-        title: Text(widget.title),
+        backgroundColor: Colors.blue,
+        leading: Icon(Icons.android, color: Colors.white),
+        title: Text(
+          'MWONE',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+       actions: <Widget>[
+         GestureDetector(
+           child: Icon(Icons.settings , color: colorIcon,),
+           onTap: () {
+             print('Boss');
+           },
+         ),
+       ],
       ),
       body: Center(
         child: GestureDetector(
@@ -63,7 +77,8 @@ class _MyHomePageState extends State<MyHomePage> {
           },
         ),
         
-      ) 
+      ) ,
+  
     );
   }
 }
