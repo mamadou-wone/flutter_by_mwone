@@ -29,17 +29,26 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
- Color color = Colors.blue;
+ Color color = Colors.deepOrange;
+ 
+
+ void listEntier(){
+   for (var i = 0; i < 100; i++) {
+     Text(i.toString());
+   }
+ }
 
   @override
   Widget build(BuildContext context) { 
     Color colorIcon = Colors.white;
+    List<int>entier = [1,2,3,4];
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
         leading: Icon(Icons.android, color: Colors.white),
         title: Text(
           'MWONE',
+          textAlign: TextAlign.center,
           style: TextStyle(
             color: Colors.white,
           ),
@@ -53,36 +62,39 @@ class _MyHomePageState extends State<MyHomePage> {
          ),
        ],
       ),
-      body: Center(
-        child: GestureDetector(
-          child: Container(
-            height: 100,
-            width: 100,
-            color: color,
-          ),
-          onTap: () {
-            setState(() {
-              color = Colors.black;
-            });            
-          },
-          onDoubleTap: () {
-            setState(() {
-              color = Colors.yellow;
-            }); 
-          },
-          onLongPress: () {
-            setState(() {
-              color = Colors.blue;
-            });
-          },
-        ),
-        
-      ) ,
-  
+      body:ListView(  
+        children: <Widget>[
+          Text(entier[1].toString()),
+        ],
+      ),
     );
   }
 }
 
+// Center(
+//         child: GestureDetector(
+//           child: Container(
+//             height: 100,
+//             width: 100,
+//             color: color,
+//           ),
+//           onTap: () {
+//             setState(() {
+//               color = Colors.black;
+//             });            
+//           },
+//           onDoubleTap: () {
+//             setState(() {
+//               color = Colors.yellow;
+//             }); 
+//           },
+//           onLongPress: () {
+//             setState(() {
+//               color = Colors.blue;
+//             });
+//           },
+//         ),    
+//       ) ,
 // class MyApp extends StatelessWidget{
   
 //   @override
