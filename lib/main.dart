@@ -30,7 +30,10 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
  Color color = Colors.deepOrange;
- 
+ Color navColor;
+bool  airplaneMode = false;
+String title;
+
 
  void listEntier(){
    for (var i = 0; i < 100; i++) {
@@ -40,14 +43,24 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) { 
+    Icon plane;
+    if (airplaneMode) {
+      plane = Icon(Icons.airplanemode_active);
+      title = "BOSS";
+      navColor = Colors.red;
+    }else{
+      plane = Icon(Icons.airplanemode_inactive) ;
+      title =  'MWONE';
+      navColor = Colors.blue;
+    }
     Color colorIcon = Colors.white;
     List<int>entier = [1,2,3,4];
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: navColor,
         leading: Icon(Icons.android, color: Colors.white),
         title: Text(
-          'MWONE',
+         title,
           textAlign: TextAlign.center,
           style: TextStyle(
             color: Colors.white,
@@ -65,6 +78,17 @@ class _MyHomePageState extends State<MyHomePage> {
       body:ListView(  
         children: <Widget>[
           Text(entier[1].toString()),
+          Center(
+            child: FloatingActionButton(
+              child: plane,
+              backgroundColor: navColor,
+              onPressed: () {
+               setState(() {
+                 airplaneMode = !airplaneMode;
+               });
+              },
+            ),
+          )
         ],
       ),
     );
