@@ -50,7 +50,7 @@ String title;
       navColor = Colors.red;
     }else{
       plane = Icon(Icons.airplanemode_inactive) ;
-      title =  'MWONE';
+      title =  "MWONE";
       navColor = Colors.blue;
     }
     Color colorIcon = Colors.white;
