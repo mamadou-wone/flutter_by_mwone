@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:my_first_mobile_app/IntroductionPage.dart';
+import 'package:my_first_mobile_app/custom_icons/HomePage.dart';
+import 'package:page_transition/page_transition.dart';
 
 void main() {
-    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then((_){
-      runApp(MyApp());
-    });
-    WidgetsFlutterBinding.ensureInitialized();
-
+  WidgetsFlutterBinding.ensureInitialized(); 
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then((_){
+       runApp(MyApp());
+  });
 }
 
 class MyApp extends StatelessWidget {
@@ -20,7 +21,18 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: IntroductionPage(),
+     onGenerateRoute: (settings) {
+       switch (settings.name) {
+         case "/": 
+         return PageTransition(child: IntroductionPage(), type: PageTransitionType.fade);           
+           break;
+           case "/home": 
+         return PageTransition(child: HomePage(), type: PageTransitionType.fade);           
+           break;
+         default:
+          return null;
+       }
+     },
     );
   }
 }
