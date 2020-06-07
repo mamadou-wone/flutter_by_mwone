@@ -17,8 +17,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(    
-        primarySwatch: Colors.blue,
+      theme: ThemeData(   
+        fontFamily: 'Roboto',
+       primaryColor: Colors.white,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
      onGenerateRoute: (settings) {
