@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_mobile_app/custom_icons/twitter_icons_icons.dart';
 import 'package:my_first_mobile_app/custom_libraries/Commun.dart';
+import 'package:my_first_mobile_app/custom_widgets/CustomText.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -22,7 +23,11 @@ class _HomePageState extends State<HomePage> {
         children: <Widget>[
           Text("MWONE"),
           builSeparator(MediaQuery.of(context).size.width),
-          Text("BOSS"),
+          CustomText(
+            text: "BOSS",
+            fontColor: FontColor.blue,
+            fontSize: FontSize.xl,
+          )
         ],
         ),
       )       
