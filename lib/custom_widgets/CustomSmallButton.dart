@@ -11,4 +11,16 @@ class CustomSmallButton extends StatelessWidget{
   final Color backgroundButton;
   final Color borderColor;
 
+  CustomSmallButton({
+    @required this.text,
+    @required this.onPressed,
+    @required this.fontColor,
+    @required this.backgroundButton,
+    this.fontSize = FontSize.sm,
+    this.fontWeight = FontWeight.normal,
+    this.icon,
+    @required this.borderColor
+  });
+  
+
 }
