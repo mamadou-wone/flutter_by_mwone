@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_mobile_app/custom_icons/twitter_icons_icons.dart';
+import 'package:my_first_mobile_app/custom_widgets/CustomText.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
   final BuildContext context;
@@ -14,10 +15,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
     @required this.context,
     @required this.widthScreen,
     @required this.heightScreen,
-    this.appBarHeight = 0.05,
+    this.appBarHeight = 0.071,
     this.appBarWidth = 1,
-    this.appBarLogoHidth = 0.028,
-    this.appBarIconHeight = 0.028
+    this.appBarLogoHidth = 0.038,
+    this.appBarIconHeight = 0.038
   });
 
   @override
@@ -36,6 +37,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
         IconButton(
           icon: Icon(TwitterIcons.brightness_7),
           iconSize: iconSize,
+          color: Colors.blue,
           onPressed: (){
             print('settings');
           },

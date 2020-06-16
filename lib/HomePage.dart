@@ -42,7 +42,10 @@ class _HomePageState extends State<HomePage> {
                 onPressed: () {
                   print('click');
                 }),
-                MoviePreview(
+                SingleChildScrollView(
+                  child: Column(
+                    children: <Widget>[
+                       MoviePreview(
                   heightScreen: screenHeigth,
                   widthScreen: screenWidth,
                   movieId: 2, 
@@ -52,7 +55,23 @@ class _HomePageState extends State<HomePage> {
                   movieImage: "pngtree-whatsapp-icon-png-image_3584844.jpg",
                   movieScore: "7.5", 
                   movieCategorie: [],
-                  scaffoldKey: null)
+                  scaffoldKey: null),
+                   MoviePreview(
+                  heightScreen: screenHeigth,
+                  widthScreen: screenWidth,
+                  movieId: 2, 
+                  movieTitle: "Whatssap", 
+                  movieDate: "", 
+                  movieDescription: "Un film sur Whatssap", 
+                  movieImage: "pngtree-whatsapp-icon-png-image_3584844.jpg",
+                  movieScore: "7.5", 
+                  movieCategorie: [],
+                  scaffoldKey: null),
+                  
+                    ],
+                  ),
+                )
+               
           ],
         ),
       ),

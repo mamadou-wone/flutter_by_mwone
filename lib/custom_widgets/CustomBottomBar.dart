@@ -14,7 +14,7 @@ class CustomBottomBar extends StatelessWidget{
       @required this.context,
       @required this.heightScrenn,
       @required this.widthScreen,
-      this.appBarHeight = 0.07,
+      this.appBarHeight = 0.09,
       this.appBarWidth = 1,
       this.appBarIconHeigth = 0.04,
       this.appBarBorderHeigth = 0.01
@@ -27,7 +27,6 @@ class CustomBottomBar extends StatelessWidget{
         color: Colors.grey[300],
       );
     }
-
     Widget buildIconsRow(){
       double rowHeight = this.heightScrenn * this.appBarHeight - this.heightScrenn * this.appBarBorderHeigth;
       double iconSize = this.heightScrenn * this.appBarIconHeigth;
@@ -44,7 +43,7 @@ class CustomBottomBar extends StatelessWidget{
             IconButton(
               iconSize: iconSize,
               color: Colors.blue,
-              icon: Icon(TwitterIcons.share),
+              icon: Icon(TwitterIcons.home),
               onPressed: (){
                 print('first click');
               },
@@ -60,7 +59,15 @@ class CustomBottomBar extends StatelessWidget{
             IconButton(
               iconSize: iconSize,
               color: Colors.blue,
-              icon: Icon(TwitterIcons.chat),
+              icon: Icon(TwitterIcons.notifications_none),
+              onPressed: (){
+                print('Third click');
+              },
+            ),
+            IconButton(
+              iconSize: iconSize,
+              color: Colors.blue,
+              icon: Icon(TwitterIcons.mail),
               onPressed: (){
                 print('Third click');
               },
