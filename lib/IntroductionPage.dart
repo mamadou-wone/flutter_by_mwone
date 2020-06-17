@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_mobile_app/custom_icons/twitter_icons_icons.dart';
+import 'package:my_first_mobile_app/custom_widgets/CustomBottomBar.dart';
+import 'package:my_first_mobile_app/custom_widgets/CustomTwitterBottomBar.dart';
 
 import 'custom_widgets/CustomAppBar.dart';
 
@@ -50,33 +52,33 @@ class _IntroductionPageState extends State<IntroductionPage> {
           context: context,
           widthScreen: screenWidth,
           heightScreen: screenHeigth),
-      body: ListView(
-        children: <Widget>[
-          Image.asset(
-            "assets/#1.jpg",
-            width: 100,
-            height: 100,
-          ),
-          // Text(entier[1].toString()),
-          Center(
-            child: FloatingActionButton(
-              child: plane,
-              backgroundColor: navColor,
-              onPressed: () {
-                setState(() {
-                  airplaneMode = !airplaneMode;
-                });
-              },
-            ),
-          ),
-        ],
-      ),
-      floatingActionButton: FlatButton(
-        child: Icon(TwitterIcons.flash_on),
-        onPressed: () {
-          Navigator.pushNamed(context, "/home");
-        },
+      // body: ListView(
+      //   children: <Widget>[
+      //     Image.asset(
+      //       "assets/#1.jpg",
+      //       width: 100,
+      //       height: 100,
+      //     ),
+      //     // Text(entier[1].toString()),
+      //     Center(
+      //       child: FloatingActionButton(
+      //         child: plane,
+      //         backgroundColor: navColor,
+      //         onPressed: () {
+      //           setState(() {
+      //             airplaneMode = !airplaneMode;
+      //           });
+      //         },
+      //       ),
+      //     ),
+      //   ],
+      // ),
+      bottomNavigationBar: CustomTwitterBottomBar(
+        context: context,
+        heightScrenn: screenHeigth,
+        widthScreen: screenWidth,
       ),
     );
   }
 }
+// 
