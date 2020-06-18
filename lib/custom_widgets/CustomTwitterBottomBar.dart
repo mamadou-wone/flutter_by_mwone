@@ -49,6 +49,8 @@ class _CustomTwitterBottomBar extends State<CustomTwitterBottomBar>{
  Widget buildIconsRow() {
     double rowHeight = widget.heightScrenn * widget.appBarHeight - widget.heightScrenn * widget.appBarBorderHeigth;   
     double iconSize = widget.heightScrenn * widget.appBarIconHeigth;
+    Color corlorIcon = Colors.blue;
+
     Color colorIconSearchBottomBar = Colors.grey[600];
     Color colorIconHomeBottomBar =  Colors.grey[600];
     Color colorIconNotifBottomBar =  Colors.grey[600];
@@ -64,46 +66,35 @@ class _CustomTwitterBottomBar extends State<CustomTwitterBottomBar>{
         children: <Widget>[
           IconButton(
             iconSize: iconSize,
-            color: colorIconHomeBottomBar,
+            color: corlorIcon,
             icon: Icon(TwitterIcons.home),
             onPressed: () {
               Navigator.pushNamed(context, "/");
-              setState(() {
-                colorIconHomeBottomBar = Colors.blue;
-              });
             },
           ),
           IconButton(
             iconSize: iconSize,
-            color: colorIconSearchBottomBar,
+            color: corlorIcon,
             icon: Icon(TwitterIcons.search),
             onPressed: () {
               Navigator.pushNamed(context, "/home");
-              setState(() {
-                colorIconNotifBottomBar = Colors.blue;
-              });
+               print("Boss");
             },
           ),
           IconButton(
             iconSize: iconSize,
-            color: colorIconNotifBottomBar,
+            color: corlorIcon,
             icon: Icon(TwitterIcons.notifications_none),
             onPressed: () {
               print('Third click');
-              setState(() {
-                colorIconNotifBottomBar = Colors.blue;
-              });
             },
           ),
           IconButton(
             iconSize: iconSize,
-            color: colorIconMailBottomBar,
+            color: corlorIcon,
             icon: Icon(TwitterIcons.mail),
             onPressed: () {
               print('Third click');
-              setState(() {
-                colorIconMailBottomBar = Colors.blue;
-              });
             },
           ),
         ],
