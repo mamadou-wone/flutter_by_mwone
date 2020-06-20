@@ -28,24 +28,9 @@ class _HomePageState extends State<HomePage> {
           context: context,
           widthScreen: screenWidth,
           heightScreen: screenHeigth),
-      body: Padding(
-        padding: EdgeInsets.only(top: 200),
-        child: Column(
-          children: <Widget>[
-            Text("MWONE"),
-            builSeparator(MediaQuery.of(context).size.width),
-            CustomSmallButton(
-                text: "Boss",
-                fontColor: FontColor.blue,
-                backgroundButton: Theme.of(context).primaryColor,
-                borderColor: Colors.transparent,
-                onPressed: () {
-                  print('click');
-                }),
-                SingleChildScrollView(
-                  child: Column(
-                    children: <Widget>[
-                       MoviePreview(
+      body: ListView(
+        children: <Widget>[
+           MoviePreview(
                   heightScreen: screenHeigth,
                   widthScreen: screenWidth,
                   movieId: 2, 
@@ -56,6 +41,7 @@ class _HomePageState extends State<HomePage> {
                   movieScore: "7.5", 
                   movieCategorie: [],
                   scaffoldKey: null),
+                    builSeparator(screenWidth),
                    MoviePreview(
                   heightScreen: screenHeigth,
                   widthScreen: screenWidth,
@@ -67,13 +53,76 @@ class _HomePageState extends State<HomePage> {
                   movieScore: "7.5", 
                   movieCategorie: [],
                   scaffoldKey: null),
-                  
-                    ],
-                  ),
-                )
-               
-          ],
-        ),
+                    MoviePreview(
+                  heightScreen: screenHeigth,
+                  widthScreen: screenWidth,
+                  movieId: 2, 
+                  movieTitle: "Whatssap", 
+                  movieDate: "", 
+                  movieDescription: "Un film sur Whatssap", 
+                  movieImage: "pngtree-whatsapp-icon-png-image_3584844.jpg",
+                  movieScore: "7.5", 
+                  movieCategorie: [],
+                  scaffoldKey: null),
+                    builSeparator(screenWidth),
+                   MoviePreview(
+                  heightScreen: screenHeigth,
+                  widthScreen: screenWidth,
+                  movieId: 2, 
+                  movieTitle: "Whatssap", 
+                  movieDate: "", 
+                  movieDescription: "Un film sur Whatssap", 
+                  movieImage: "pngtree-whatsapp-icon-png-image_3584844.jpg",
+                  movieScore: "7.5", 
+                  movieCategorie: [],
+                  scaffoldKey: null),
+                    MoviePreview(
+                  heightScreen: screenHeigth,
+                  widthScreen: screenWidth,
+                  movieId: 2, 
+                  movieTitle: "Whatssap", 
+                  movieDate: "", 
+                  movieDescription: "Un film sur Whatssap", 
+                  movieImage: "pngtree-whatsapp-icon-png-image_3584844.jpg",
+                  movieScore: "7.5", 
+                  movieCategorie: [],
+                  scaffoldKey: null),
+                    builSeparator(screenWidth),
+                   MoviePreview(
+                  heightScreen: screenHeigth,
+                  widthScreen: screenWidth,
+                  movieId: 2, 
+                  movieTitle: "Whatssap", 
+                  movieDate: "", 
+                  movieDescription: "Un film sur Whatssap", 
+                  movieImage: "pngtree-whatsapp-icon-png-image_3584844.jpg",
+                  movieScore: "7.5", 
+                  movieCategorie: [],
+                  scaffoldKey: null),
+                    MoviePreview(
+                  heightScreen: screenHeigth,
+                  widthScreen: screenWidth,
+                  movieId: 2, 
+                  movieTitle: "Whatssap", 
+                  movieDate: "", 
+                  movieDescription: "Un film sur Whatssap", 
+                  movieImage: "pngtree-whatsapp-icon-png-image_3584844.jpg",
+                  movieScore: "7.5", 
+                  movieCategorie: [],
+                  scaffoldKey: null),
+                    builSeparator(screenWidth),
+                   MoviePreview(
+                  heightScreen: screenHeigth,
+                  widthScreen: screenWidth,
+                  movieId: 2, 
+                  movieTitle: "Whatssap", 
+                  movieDate: "", 
+                  movieDescription: "Un film sur Whatssap", 
+                  movieImage: "pngtree-whatsapp-icon-png-image_3584844.jpg",
+                  movieScore: "7.5", 
+                  movieCategorie: [],
+                  scaffoldKey: null),
+        ],
       ),
       bottomNavigationBar: CustomBottomBar(
           context: context,
