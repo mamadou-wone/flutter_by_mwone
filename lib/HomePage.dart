@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_mobile_app/custom_icons/twitter_icons_icons.dart';
 import 'package:my_first_mobile_app/custom_libraries/Commun.dart';
 import 'package:my_first_mobile_app/custom_widgets/CustomAppBar.dart';
 import 'package:my_first_mobile_app/custom_widgets/CustomBottomBar.dart';
-import 'package:my_first_mobile_app/custom_widgets/CustomSmallButton.dart';
-import 'package:my_first_mobile_app/custom_widgets/CustomText.dart';
 import 'package:my_first_mobile_app/custom_widgets/MoviePreview.dart';
+
+import 'custom_widgets/CustomTwitterBottomBar.dart';
 
 class HomePage extends StatefulWidget {
   // MyHomePage({Key key, this.title}) : super(key: key);
@@ -124,7 +123,7 @@ class _HomePageState extends State<HomePage> {
                   scaffoldKey: null),
         ],
       ),
-      bottomNavigationBar: CustomBottomBar(
+      bottomNavigationBar: CustomTwitterBottomBar(
           context: context,
           heightScrenn: screenHeigth,
           widthScreen: screenWidth),

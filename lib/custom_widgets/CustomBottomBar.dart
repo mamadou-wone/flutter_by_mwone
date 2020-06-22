@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_mobile_app/custom_icons/car_sales_icons.dart';
 import 'package:my_first_mobile_app/custom_icons/twitter_icons_icons.dart';
 
 class CustomBottomBar extends StatelessWidget {
@@ -43,18 +44,20 @@ class CustomBottomBar extends StatelessWidget {
         children: <Widget>[
           IconButton(
             iconSize: iconSize,
-            color: Colors.blue,
-            icon: Icon(TwitterIcons.home),
+            color: Colors.grey[300],
+            icon: Icon(CarSales.home),
             onPressed: () {
-              Navigator.pushNamed(context, "/");
+              print("boss");
+               return Navigator.pushReplacementNamed(this.context, "/");
+              // Navigator.pushNamed(context, "/");
             },
           ),
           IconButton(
             iconSize: iconSize,
             color: Colors.blue,
-            icon: Icon(TwitterIcons.search),
+            icon: Icon(CarSales.search),
             onPressed: () {
-              Navigator.pushNamed(context, "/home");
+              return Navigator.pushReplacementNamed(this.context, "/search");
             },
           ),
           IconButton(

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:my_first_mobile_app/custom_icons/car_sales_icons.dart';
 import 'package:my_first_mobile_app/custom_icons/twitter_icons_icons.dart';
 
-class CustomTwitterBottomBar extends StatefulWidget{
-   final BuildContext context;
+class CustomTwitterBottomBar extends StatefulWidget {
+  final BuildContext context;
   final double heightScrenn;
   final double widthScreen;
   final double
@@ -21,22 +22,17 @@ class CustomTwitterBottomBar extends StatefulWidget{
       this.appBarIconHeigth = 0.04,
       this.appBarBorderHeigth = 0.01});
 
-  @override 
+  @override
   _CustomTwitterBottomBar createState() => _CustomTwitterBottomBar();
-
-    
 }
 
-class _CustomTwitterBottomBar extends State<CustomTwitterBottomBar>{
-
-
- @override
+class _CustomTwitterBottomBar extends State<CustomTwitterBottomBar> {
+  @override
   void setState(fn) {
     if (mounted) {
       super.setState(fn);
     }
   }
-
 
   Widget buildTopBorder() {
     return Container(
@@ -46,15 +42,16 @@ class _CustomTwitterBottomBar extends State<CustomTwitterBottomBar>{
     );
   }
 
- Widget buildIconsRow() {
-    double rowHeight = widget.heightScrenn * widget.appBarHeight - widget.heightScrenn * widget.appBarBorderHeigth;   
+  Widget buildIconsRow() {
+    double rowHeight = widget.heightScrenn * widget.appBarHeight -
+        widget.heightScrenn * widget.appBarBorderHeigth;
     double iconSize = widget.heightScrenn * widget.appBarIconHeigth;
-    Color corlorIcon = Colors.blue;
+    Color corlorIcon = Colors.grey[600];
 
     Color colorIconSearchBottomBar = Colors.grey[600];
-    Color colorIconHomeBottomBar =  Colors.grey[600];
-    Color colorIconNotifBottomBar =  Colors.grey[600];
-    Color colorIconMailBottomBar =  Colors.grey[600];
+    Color colorIconHomeBottomBar = Colors.grey[600];
+    Color colorIconNotifBottomBar = Colors.grey[600];
+    Color colorIconMailBottomBar = Colors.grey[600];
     return Container(
       color: Colors.white,
       width: widget.widthScreen * widget.appBarWidth,
@@ -66,19 +63,21 @@ class _CustomTwitterBottomBar extends State<CustomTwitterBottomBar>{
         children: <Widget>[
           IconButton(
             iconSize: iconSize,
-            color: corlorIcon,
+            color: Colors.yellow[600],
             icon: Icon(TwitterIcons.home),
             onPressed: () {
-              Navigator.pushNamed(context, "/");
+              return Navigator.pushReplacementNamed(this.context, "/");
             },
           ),
           IconButton(
             iconSize: iconSize,
-            color: corlorIcon,
+            color: colorIconSearchBottomBar,
             icon: Icon(TwitterIcons.search),
+            
             onPressed: () {
-              Navigator.pushNamed(context, "/home");
-               print("Boss");
+              setState(() {
+                colorIconSearchBottomBar = Colors.blue;
+              });
             },
           ),
           IconButton(
@@ -92,7 +91,7 @@ class _CustomTwitterBottomBar extends State<CustomTwitterBottomBar>{
           IconButton(
             iconSize: iconSize,
             color: corlorIcon,
-            icon: Icon(TwitterIcons.mail),
+            icon: Icon(CarSales.person_outline),
             onPressed: () {
               print('Third click');
             },
@@ -102,7 +101,7 @@ class _CustomTwitterBottomBar extends State<CustomTwitterBottomBar>{
     );
   }
 
-   @override
+  @override
   Widget build(BuildContext context) {
     return Container(
       height: widget.heightScrenn * widget.appBarHeight,
@@ -115,5 +114,4 @@ class _CustomTwitterBottomBar extends State<CustomTwitterBottomBar>{
       ),
     );
   }
-
 }

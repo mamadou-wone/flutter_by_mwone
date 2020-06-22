@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:my_first_mobile_app/IntroductionPage.dart';
 import 'package:my_first_mobile_app/HomePage.dart';
+import 'package:my_first_mobile_app/wone_custum_widgets/SearchPage.dart';
 import 'package:page_transition/page_transition.dart';
 
 void main() {
@@ -22,13 +23,16 @@ class MyApp extends StatelessWidget {
        primaryColor: Colors.white,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      // supportedLocales: allTranslations.supportedLocales(),
+      // //je définis la route à appeler à l'ouverture
+      // initialRoute: '/'
      onGenerateRoute: (settings) {
        switch (settings.name) {
          case "/": 
-         return PageTransition(child: IntroductionPage(), type: PageTransitionType.fade);           
-           break;
-           case "/home": 
          return PageTransition(child: HomePage(), type: PageTransitionType.fade);           
+           break;
+           case "/search": 
+         return PageTransition(child: SearchPage(), type: PageTransitionType.fade);           
            break;
          default:
           return null;

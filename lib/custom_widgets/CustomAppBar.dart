@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_mobile_app/custom_icons/car_sales_icons.dart';
 import 'package:my_first_mobile_app/custom_icons/twitter_icons_icons.dart';
 import 'package:my_first_mobile_app/custom_widgets/CustomText.dart';
 
@@ -29,15 +30,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       automaticallyImplyLeading: false,
       title: Icon(
-        TwitterIcons.twitter,
-        size: logoSize,
-        color: Colors.blue,
+        CarSales.car,
+        size: 50,
+        color: Colors.grey[600],
       ),
       actions: <Widget>[
         IconButton(
           icon: Icon(TwitterIcons.brightness_7),
           iconSize: iconSize,
-          color: Colors.blue,
+          color: Colors.grey[600],
           onPressed: () {
             print('settings');
           },
