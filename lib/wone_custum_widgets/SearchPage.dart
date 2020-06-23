@@ -22,14 +22,14 @@ class _SearchPageState extends State<SearchPage> {
     double screenHeigth = MediaQuery.of(context).size.height;
     return Scaffold(
       // key: _scaffoldKey,
-      appBar: CustomAppBar(
-          context: context,
-          widthScreen: screenWidth,
-          heightScreen: screenHeigth),
+      // appBar: CustomAppBar(
+      //     context: context,
+      //     widthScreen: screenWidth,
+      //     heightScreen: screenHeigth),
       body: Center(
         child: Icon(CarSales.home, size: 100, color: Colors.yellow[600],),
       ),
-      bottomNavigationBar: CustomTwitterBottomBar(
+      bottomNavigationBar: CustomBottomBar(
           context: context,
           heightScrenn: screenHeigth,
           widthScreen: screenWidth),

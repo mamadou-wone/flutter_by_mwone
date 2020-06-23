@@ -61,14 +61,14 @@ class _CustomTwitterBottomBar extends State<CustomTwitterBottomBar> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly, //Alignement equitable
         crossAxisAlignment: CrossAxisAlignment.start, //Alignement en haut
         children: <Widget>[
-          IconButton(
-            iconSize: iconSize,
-            color: Colors.yellow[600],
-            icon: Icon(TwitterIcons.home),
-            onPressed: () {
-              return Navigator.pushReplacementNamed(this.context, "/");
-            },
-          ),
+          // IconButton(
+          //   iconSize: iconSize,
+          //   color: Colors.yellow[600],
+          //   icon: Icon(TwitterIcons.home),
+          //   onPressed: () {
+          //     return Navigator.pushReplacementNamed(this.context, "/");
+          //   },
+          // ),
           IconButton(
             iconSize: iconSize,
             color: colorIconSearchBottomBar,

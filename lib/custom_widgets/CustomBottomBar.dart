@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:my_first_mobile_app/custom_icons/car_sales_icons.dart';
 import 'package:my_first_mobile_app/custom_icons/twitter_icons_icons.dart';
 
-class CustomBottomBar extends StatelessWidget {
+class CustomBottomBar extends StatefulWidget {
   final BuildContext context;
   final double heightScrenn;
   final double widthScreen;
@@ -21,62 +22,95 @@ class CustomBottomBar extends StatelessWidget {
       this.appBarIconHeigth = 0.04,
       this.appBarBorderHeigth = 0.01});
 
+  @override
+  _CustomBottomBar createState() => _CustomBottomBar();
+}
+
+class _CustomBottomBar extends State<CustomBottomBar> {
+  @override
+  void setState(fn) {
+    if (mounted) {
+      super.setState(fn);
+    }
+  }
+
+  int _curIndex = 0;
+  // static const TextStyle optionStyle =
+  //     TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  // static const List<Widget> _widgetOptions = <Widget>[
+  //   Text(
+  //     'Index 0: Home',
+  //     style: optionStyle,
+  //   ),
+  //   Text(
+  //     'Index 1: Business',
+  //     style: optionStyle,
+  //   ),
+  //   Text(
+  //     'Index 2: School',
+  //     style: optionStyle,
+  //   ),
+  // ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _curIndex = index;
+    });
+  }
+
   Widget buildTopBorder() {
     return Container(
-      height: this.heightScrenn * this.appBarBorderHeigth,
-      width: this.widthScreen * this.appBarWidth,
+      height: widget.heightScrenn * widget.appBarBorderHeigth,
+      width: widget.widthScreen * widget.appBarWidth,
       color: Colors.grey[300],
     );
   }
 
   Widget buildIconsRow() {
-    double rowHeight = this.heightScrenn * this.appBarHeight - this.heightScrenn * this.appBarBorderHeigth;   
-    double iconSize = this.heightScrenn * this.appBarIconHeigth;
-
+     var _curIndex = 0;
+    double rowHeight = widget.heightScrenn * widget.appBarHeight -
+        widget.heightScrenn * widget.appBarBorderHeigth;
+    // double iconSize = widget.heightScrenn * widget.appBarIconHeigth;
     return Container(
       color: Colors.white,
-      width: this.widthScreen * this.appBarWidth,
+      width: widget.widthScreen * widget.appBarWidth,
       height: rowHeight,
       alignment: Alignment.topCenter,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly, //Alignement equitable
-        crossAxisAlignment: CrossAxisAlignment.start, //Alignement en haut
-        children: <Widget>[
-          IconButton(
-            iconSize: iconSize,
-            color: Colors.grey[300],
+      child: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
             icon: Icon(CarSales.home),
-            onPressed: () {
-              print("boss");
-               return Navigator.pushReplacementNamed(this.context, "/");
-              // Navigator.pushNamed(context, "/");
-            },
+            title: Text('Annonces'),      
           ),
-          IconButton(
-            iconSize: iconSize,
-            color: Colors.blue,
+          BottomNavigationBarItem(
             icon: Icon(CarSales.search),
-            onPressed: () {
-              return Navigator.pushReplacementNamed(this.context, "/search");
-            },
+            title: Text('Search'),
           ),
-          IconButton(
-            iconSize: iconSize,
-            color: Colors.blue,
-            icon: Icon(TwitterIcons.notifications_none),
-            onPressed: () {
-              print('Third click');
-            },
-          ),
-          IconButton(
-            iconSize: iconSize,
-            color: Colors.blue,
-            icon: Icon(TwitterIcons.mail),
-            onPressed: () {
-              print('Third click');
-            },
+          BottomNavigationBarItem(
+            icon: Icon(CarSales.person_outline),
+            title: Text('Profil'),
           ),
         ],
+        // currentIndex: _selectedIndex,
+        selectedItemColor: Colors.amber[800],
+        currentIndex: _curIndex,
+        onTap: (index) {
+          setState(() {
+            _curIndex = index;
+            switch (_curIndex) {
+              case 0:
+              return Navigator.pushReplacementNamed(this.context, "/");  
+                break;
+              case 1:
+              print('user2');
+               return Navigator.pushReplacementNamed(this.context, "/search");             
+                break;
+              case 2:
+               print('user3');
+                break;
+            }
+          });
+        },
       ),
     );
   }
@@ -84,8 +118,8 @@ class CustomBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: this.heightScrenn * this.appBarHeight,
-      width: this.widthScreen * this.appBarWidth,
+      height: widget.heightScrenn * widget.appBarHeight,
+      width: widget.widthScreen * widget.appBarWidth,
       child: Column(
         children: <Widget>[
           buildTopBorder(),
