@@ -91,7 +91,7 @@ class _CustomBottomBar extends State<CustomBottomBar> {
             title: Text('Profil'),
           ),
         ],
-        // currentIndex: _selectedIndex,
+        // currentIndex: _selectedIndex,uuuu
         selectedItemColor: Colors.amber[800],
         currentIndex: _curIndex,
         onTap: (index) {
