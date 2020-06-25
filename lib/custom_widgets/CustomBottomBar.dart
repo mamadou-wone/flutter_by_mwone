@@ -35,39 +35,35 @@ class _CustomBottomBar extends State<CustomBottomBar> {
   }
 
   int _curIndex = 0;
-  // static const TextStyle optionStyle =
-  //     TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  // static const List<Widget> _widgetOptions = <Widget>[
-  //   Text(
-  //     'Index 0: Home',
-  //     style: optionStyle,
-  //   ),
-  //   Text(
-  //     'Index 1: Business',
-  //     style: optionStyle,
-  //   ),
-  //   Text(
-  //     'Index 2: School',
-  //     style: optionStyle,
-  //   ),
-  // ];
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _curIndex = index;
-    });
-  }
-
+  var route;
   Widget buildTopBorder() {
     return Container(
       height: widget.heightScrenn * widget.appBarBorderHeigth,
       width: widget.widthScreen * widget.appBarWidth,
-      color: Colors.grey[300],
     );
   }
 
+   _onItemTapped(int index) {
+    setState(() {
+      _curIndex = index;
+    });
+    switch (_curIndex) {
+            case 0:
+              print('user1');
+              route =  Navigator.pushReplacementNamed(this.context, "/");
+              break;
+            case 1:
+              print('user2');
+              route =  Navigator.pushReplacementNamed(this.context, "/search");
+              break;
+            case 2:
+              print('user3');
+              route =  Navigator.pushReplacementNamed(this.context, "/profil");
+              break;
+          }
+          return route;
+  }
   Widget buildIconsRow() {
-     var _curIndex = 0;
     double rowHeight = widget.heightScrenn * widget.appBarHeight -
         widget.heightScrenn * widget.appBarBorderHeigth;
     // double iconSize = widget.heightScrenn * widget.appBarIconHeigth;
@@ -80,7 +76,7 @@ class _CustomBottomBar extends State<CustomBottomBar> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(CarSales.home),
-            title: Text('Annonces'),      
+            title: Text('Annonces'),
           ),
           BottomNavigationBarItem(
             icon: Icon(CarSales.search),
@@ -94,23 +90,7 @@ class _CustomBottomBar extends State<CustomBottomBar> {
         // currentIndex: _selectedIndex,uuuu
         selectedItemColor: Colors.amber[800],
         currentIndex: _curIndex,
-        onTap: (index) {
-          setState(() {
-            _curIndex = index;
-            switch (_curIndex) {
-              case 0:
-              return Navigator.pushReplacementNamed(this.context, "/");  
-                break;
-              case 1:
-              print('user2');
-               return Navigator.pushReplacementNamed(this.context, "/search");             
-                break;
-              case 2:
-               print('user3');
-                break;
-            }
-          });
-        },
+        onTap: _onItemTapped,
       ),
     );
   }

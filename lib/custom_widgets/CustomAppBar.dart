@@ -29,10 +29,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       centerTitle: true,
       automaticallyImplyLeading: false,
-      title: Icon(
-        CarSales.car,
-        size: 50,
-        color: Colors.grey[600],
+      title:ClipRRect(
+        borderRadius: BorderRadius.circular(80.0),
+        child: Image.asset(
+        "assets/#1.jpg",
+        width: 70,
+        height: 70,
+      ),
       ),
       actions: <Widget>[
         IconButton(
@@ -44,14 +47,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           },
         ),
       ],
-      leading: ClipRRect(
-        borderRadius: BorderRadius.circular(80.0),
-        child: Image.asset(
-            "assets/#1.jpg",
-            width: 100,
-            height: 100,
-          ),
-      ),
+      // leading: ClipRRect(
+      //   borderRadius: BorderRadius.circular(80.0),
+      //   child: Image.asset(
+      //       "assets/#1.jpg",
+      //       width: 100,
+      //       height: 100,
+      //     ),
+      // ),
     );
   }
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:my_first_mobile_app/IntroductionPage.dart';
 import 'package:my_first_mobile_app/HomePage.dart';
+import 'package:my_first_mobile_app/ProfilPage.dart';
 import 'package:my_first_mobile_app/wone_custum_widgets/SearchPage.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -33,6 +34,9 @@ class MyApp extends StatelessWidget {
            break;
            case "/search": 
          return PageTransition(child: SearchPage(), type: PageTransitionType.fade);           
+           break;
+           case "/profil": 
+         return PageTransition(child: ProfilPage(), type: PageTransitionType.fade);           
            break;
          default:
           return null;

@@ -5,15 +5,15 @@ import 'package:my_first_mobile_app/custom_widgets/CustomBottomBar.dart';
 import 'package:my_first_mobile_app/custom_widgets/CustomTwitterBottomBar.dart';
 
 
-class SearchPage extends StatefulWidget {
+class ProfilPage extends StatefulWidget {
   // MyHomePage({Key key, this.title}) : super(key: key);
   // final String title;
 
   @override
-  _SearchPageState createState() => _SearchPageState();
+  _ProfilPageState createState() => _ProfilPageState();
 }
 
-class _SearchPageState extends State<SearchPage> {
+class _ProfilPageState extends State<ProfilPage> {
    final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -27,7 +27,7 @@ class _SearchPageState extends State<SearchPage> {
           widthScreen: screenWidth,
           heightScreen: screenHeigth),
       body: Center(
-        child: Icon(CarSales.search, size: 100, color: Colors.yellow[600],),
+        child: Icon(CarSales.person_outline, size: 100, color: Colors.yellow[600],),
       ),
       bottomNavigationBar: CustomBottomBar(
           context: context,
