@@ -43,26 +43,24 @@ class _CustomBottomBar extends State<CustomBottomBar> {
     );
   }
 
-   _onItemTapped(int index) {
+  _onItemTapped(int index) {
     setState(() {
       _curIndex = index;
     });
     switch (_curIndex) {
-            case 0:
-              print('user1');
-              route =  Navigator.pushReplacementNamed(this.context, "/");
-              break;
-            case 1:
-              print('user2');
-              route =  Navigator.pushReplacementNamed(this.context, "/search");
-              break;
-            case 2:
-              print('user3');
-              route =  Navigator.pushReplacementNamed(this.context, "/profil");
-              break;
-          }
-          return route;
+      case 0:
+        print('user1');
+        break;
+      case 1:
+        print('user2');
+        break;
+      case 2:
+        print('user3');
+        break;
+    }
+    return route;
   }
+
   Widget buildIconsRow() {
     double rowHeight = widget.heightScrenn * widget.appBarHeight -
         widget.heightScrenn * widget.appBarBorderHeigth;

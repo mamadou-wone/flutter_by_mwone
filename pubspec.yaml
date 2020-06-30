@@ -52,6 +52,7 @@ flutter:
     - assets/boss.jpg
     - assets/sn.png
     - assets/audi.jpg
+    - images/
     # - images/a_dot_ham.jpeg
 
   
@@ -63,8 +64,12 @@ flutter:
 
   - family:  CarSales
     fonts:
-      - asset: assets/fontsCar/CarSales.ttf    
-
+      - asset: assets/fontsCar/CarSales.ttf  
+      
+      
+  - family:  IconPack
+    fonts:    
+      - asset: assets/fontsPack/IconPack.ttf
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
