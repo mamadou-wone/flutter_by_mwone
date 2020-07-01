@@ -49,7 +49,7 @@ class _CustomBottomBar extends State<CustomBottomBar> {
     });
     switch (_curIndex) {
       case 0:
-        print('user1');
+        print('user');
         break;
       case 1:
         print('user2');
